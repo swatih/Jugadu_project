@@ -1,0 +1,9 @@
+demoapp\service\ProductService.class
+demoapp\controller\PersonController.class
+demoapp\model\Product.class
+demoapp\controller\ProductController.class
+demoapp\dao\PersonDAO.class
+demoapp\controller\HomeController.class
+demoapp\model\Person.class
+demoapp\service\PersonService.class
+demoapp\dao\ProductDAO.class

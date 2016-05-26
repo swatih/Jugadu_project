@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:beans="http://www.springframework.org/schema/beans"
+  xsi:schemaLocation="
+      http://www.springframework.org/schema/security 
+      http://www.springframework.org/schema/security/spring-security-4.1.xsd
+      http://www.springframework.org/schema/beans 
+      http://www.springframework.org/schema/beans/spring-beans-4.2.xsd"> 
+   <http auto-config="true">
+      <intercept-url pattern="/products**" access="hasRole('ROLE_ADMIN')" />
+    <!--    <form-login />
+ 
+      <logout logout-success-url="/" logout-url="/logout"/>
+      -->
+      <form-login 
+		    login-page="/login" 
+		    default-target-url="/products" 
+			authentication-failure-url="/login?error" 
+			username-parameter="username"
+			password-parameter="password" />
+<logout logout-success-url="/login" />
+		<!-- enable csrf protection -->
+		<csrf/>
+   </http>
+   <authentication-manager>
+      <authentication-provider>
+         <user-service>
+            <user name="user1" password="user1" authorities="ROLE_ADMIN" />
+         </user-service>
+      </authentication-provider>
+   </authentication-manager>
+</beans:beans>
