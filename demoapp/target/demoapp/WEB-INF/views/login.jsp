@@ -35,8 +35,8 @@
 </style>
 </head>
 <body onload='document.loginForm.username.focus();'>
-
-	<h1>Spring Security Login Form (Database Authentication)</h1>
+<div style="padding:20px">
+	<center><h1>Admin Login Form</h1></center>
 
 	<div id="login-box">
 

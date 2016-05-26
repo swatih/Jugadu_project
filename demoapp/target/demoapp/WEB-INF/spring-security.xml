@@ -23,6 +23,12 @@
 		<!-- enable csrf protection -->
 		<csrf/>
    </http>
+ <jdbc-user-service data-source-ref="dataSource"
+		  users-by-username-query=
+		    "select email,password, enabled from person where email=?"
+		  authorities-by-username-query=
+		    "select email, role from person where email =?  " />
+   <!-- 
    <authentication-manager>
       <authentication-provider>
          <user-service>
@@ -30,4 +36,5 @@
          </user-service>
       </authentication-provider>
    </authentication-manager>
+   -->
 </beans:beans>

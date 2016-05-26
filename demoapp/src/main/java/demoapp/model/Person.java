@@ -15,6 +15,7 @@ public class Person {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
     private int enabled=1;
+    private String role="ROLE_USER";
 	@NotEmpty(message="Field can't be blank")
     private String name;
 	@NotEmpty(message="Field can't be blank")
@@ -26,6 +27,16 @@ public class Person {
     
 	public int getEnabled() {
 		return enabled;
+	}
+
+
+	public String getRole() {
+		return role;
+	}
+
+
+	public void setRole(String role) {
+		this.role = role;
 	}
 
 
